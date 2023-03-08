@@ -10,14 +10,16 @@ public class Client {
                 .addEstudiante(new Estudiante(651231,"Luis","29/08/2001","Sistemas"))
                 .addEstudiante(new Estudiante(195632,"Ines","21/12/2004","Arquitectura"));
 
-        String orderType="CI";
+        String orderType="CARRERA";
 
-        // condicion para saber cual es la mejor estrategia a usar
+
 
         if (orderType.equals("CI")){
             dataBase.setStrategyAlgorithm(new CIBurbuja());
-        }else{
+        }else if (orderType.equals("NAME")){
             dataBase.setStrategyAlgorithm(new NameMontículos());
+        } else if (orderType.equals("CARRERA")){
+            dataBase.setStrategyAlgorithm(new CarreraSeleccion());
         }
 
         dataBase.ordenar();

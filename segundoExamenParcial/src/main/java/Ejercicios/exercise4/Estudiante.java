@@ -17,7 +17,7 @@ public class Estudiante {
         return ci;
     }
 
-    public void setCi(String ci) {
+    public void setCi(int ci) {
         this.ci = ci;
     }
 
@@ -42,7 +42,7 @@ public class Estudiante {
         return carrera;
     }
 
-    public void setCarrera(int carrera) {
+    public void setCarrera(String carrera) {
         this.carrera = carrera;
     }
 
