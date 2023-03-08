@@ -7,15 +7,17 @@ public class Cliente {
         pagina.setName("UPBNET");
         pagina.setDescription("this academy to share videos");
 
-        Suscriptor jose = new Suscriptor("Pedro");
-        Suscriptor ambar = new Suscriptor("Carla");
-        Suscriptor dylan = new Suscriptor("Roberto");
-        Suscriptor emanuel = new Suscriptor("Richard");
+        Suscriptor pedro = new Suscriptor("Pedro");
+        Suscriptor carla = new Suscriptor("Carla");
+        Suscriptor roberto = new Suscriptor("Roberto");
+        Suscriptor richard = new Suscriptor("Richard");
+        Suscriptor Melina = new Suscriptor("Melina");
 
-        pagina.subscription(jose,true);
-        pagina.subscription(ambar,false);
-        pagina.subscription(dylan,true);
-        pagina.subscription(emanuel,true);
+        pagina.subscription(pedro,true);
+        pagina.subscription(carla,false);
+        pagina.subscription(roberto,true);
+        pagina.subscription(richard,false);
+        pagina.subscription(Melina,true);
 
         // ****************** //
 
