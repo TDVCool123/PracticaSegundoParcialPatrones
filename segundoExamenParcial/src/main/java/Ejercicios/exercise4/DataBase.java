@@ -6,13 +6,13 @@ import java.util.List;
 public class DataBase {
     private List<Estudiante> estudianteList = new ArrayList<>();
     private String name;
-    private IStrategyAlgorithm strategyGame;
+    private IStrategyAlgorithm strategy;
 
     public DataBase(String name) {
         this.name = name;
     }
 
-    public List<Estudiante> getJugadorList() {
+    public List<Estudiante> getEstudianteList() {
         return estudianteList;
     }
 
@@ -29,15 +29,15 @@ public class DataBase {
         this.name = name;
     }
 
-    public IStrategyAlgorithm getStrategyGame() {
-        return strategyGame;
+    public IStrategyAlgorithm getStrategy() {
+        return strategy;
     }
 
     public void setStrategyAlgorithm(IStrategyAlgorithm strategyGame) {
-        this.strategyGame = strategyGame;
+        this.strategy = strategyGame;
     }
 
     public void ordenar(){
-        this.strategyGame.algoritmo(this.estudianteList);
+        this.strategy.algoritmo(this.estudianteList);
     }
 }

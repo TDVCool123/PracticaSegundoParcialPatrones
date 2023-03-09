@@ -2,27 +2,32 @@ package Ejercicios.exercise5;
 
 public class Prendido implements IStateComputer {
         @Override
-        public void computerBehavior(Computadora computadora) {
+        public void computerBehavior(Computadora computadora) throws InterruptedException {
 
-            int actualUse = computadora.getCPU().getPercentageUse();
+            System.out.println("Estado: Prendido");
+            int actualUseCPU = computadora.getCPU().getPercentageUse();
+            int actualUseRam = computadora.getMemoryRam().getPercentageUse();
+            int randomUse=(int) ((Math.random() * (100 - 1)) + 1);
+            computadora.getMemoryRam().show();
+            computadora.getCPU().show();
 
-            while (computadora.getCPU().getPercentageUse() <= 100){
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-                System.out.println(">>> incrementando cada 5 segundo .... <<<");
-                actualUse = actualUse + 5;
-                computadora.getCPU().setPercentageUse(actualUse);
+            int i;
+            for (i=0; i < randomUse; i++ ){
+                Thread.sleep(5000);
+                actualUseCPU =+ 5;
+                actualUseRam =+ 5;
+                computadora.getCPU().setPercentageUse(actualUseCPU);
                 computadora.getCPU().show();
-                if (actualUse > 100){
-                    computadora.getCPU().setPercentageUse(100);
-                }
+
+                computadora.getMemoryRam().setPercentageUse(actualUseRam);
+                computadora.getMemoryRam().show();
+                System.out.println("Esta incrementando el consumo de recursos");
+                System.out.println("-------------------------------------------------");
             }
 
-            System.out.println(">>> estamos al 100%  <<<");
-            computadora.getCPU().show();
+
+
+
         }
 
 }

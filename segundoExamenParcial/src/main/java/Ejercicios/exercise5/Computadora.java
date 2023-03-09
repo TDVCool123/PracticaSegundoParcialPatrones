@@ -50,7 +50,7 @@ public class Computadora {
 
 
 
-    public void useComputer(){
+    public void useComputer() throws InterruptedException {
         this.stateComputer.computerBehavior(this);
     }
 

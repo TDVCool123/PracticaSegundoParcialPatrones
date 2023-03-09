@@ -47,10 +47,6 @@ public class PaginaWeb implements IPagina {
         suscriptorList.add(user);
     }
 
-    @Override
-    public void removeSubscription(IUser user) {
-        suscriptorList.remove(user);
-    }
 
     @Override
     public void notifyVideo(Video video) {
